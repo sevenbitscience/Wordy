@@ -1,0 +1,26 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0.1em;
+}
+
+.square {
+    display: flex;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid black;
+}
