@@ -26,6 +26,13 @@ function showWord(word) {
     }
 }
 
+function errorShake() {
+    $(".game-container").animate({left: '+=1em'}, "fast");
+    $(".game-container").animate({left: '-=2em'}, "fast");
+    $(".game-container").animate({left: '+=2em'}, "fast");
+    $(".game-container").animate({left: '-=1em'}, "fast");
+}
+
 function testWord(word_in) {
     let word = word_in.toLowerCase()
     if (wrds.includes(word)) {
@@ -45,12 +52,14 @@ function testWord(word_in) {
             }
             activeLetter = $(activeLetter).next()
         }
-    }
-    $(".game-container .row").eq(rowNum).css("background-color", "white");
-    rowNum++;
-    wrd = ""
-    if (rowNum < 6) {
-        $(".game-container .row").eq(rowNum).css("background-color", "lightgray");
+        $(".game-container .row").eq(rowNum).css("background-color", "white");
+        rowNum++;
+        wrd = ""
+        if (rowNum < 6) {
+            $(".game-container .row").eq(rowNum).css("background-color", "lightgray");
+        }
+    } else {
+        errorShake();
     }
 }
 
@@ -69,10 +78,7 @@ $(document).ready(function () {
                 if (wrd.length == 5) {
                     testWord(wrd);
                 } else {
-                    $(".game-container").animate({left: '+=1em'}, "fast");
-                    $(".game-container").animate({left: '-=2em'}, "fast");
-                    $(".game-container").animate({left: '+=2em'}, "fast");
-                    $(".game-container").animate({left: '-=1em'}, "fast");
+                    errorShake();
                 }
             }
         }
