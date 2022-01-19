@@ -10,6 +10,9 @@ const wrds = ['adopt', 'rover', 'onion', 'fotos', 'media', 'empty', 'virus', 'el
 
 correct_wrd = Math.floor(Math.random() * wrds.length);
 
+lose_screen = "<div class=\"lose popup\">You lose!<div class=\"word-reveal\">The word was: " + wrds[correct_wrd] + "</div></div>";
+win_screen = "<div class=\"win popup\">You Win!</div>";
+
 function showWord(word) {
     let wrdArray = word.split("");
     
@@ -62,7 +65,7 @@ function testWord(word_in) {
             i++;
         }
         if (word == wrds[correct_wrd]) {
-            $(".game-container").after("<div class=\"win popup\">You Win!</div>");
+            $(".game-container").after(win_screen);
             playing = false;
             return
         }
@@ -78,7 +81,7 @@ function testWord(word_in) {
 
     if (rowNum == 6) {
         playing = false;
-        $(".game-container").after("<div class=\"lose popup\">You lose!</div>");
+        $(".game-container").after(lose_screen);
         return;
     }
 }

@@ -9,11 +9,16 @@
 }
 
 .popup {
-    background-color: gray;
+    background-color: lightgray;
     padding: 0.2em;
-    width: 4.5;
-
     margin: 0;
+    width: 40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     position: absolute;
     left: 50%;
     top: 30%;
@@ -22,14 +27,17 @@
 
 .win {
     font-size: 5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: greenyellow;
+    color: green;
 }
 
 .lose {
-    font-size: 5vw;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3vw;
     color: red;
+}
+
+.word-reveal {
+    font-size: 2vw;
+    color: black;
 }
 
 .game-container {
@@ -39,8 +47,8 @@
     margin: 0;
     position: absolute;
     left: 50%;
-    top: 25%;
-    transform: translate(-50%, -25%);
+    top: 40vh;
+    transform: translate(-50%, -50%);
 }
 
 .row {
@@ -52,8 +60,8 @@
 .square {
     margin: 0.1em;
     display: flex;
-    width: 1.5em;
-    height: 1.5em;
+    width: 8vh;
+    height: 8vh;
     font-size: 2vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: center;
@@ -62,20 +70,20 @@
 }
 
 .letters {
-    display: inline-flex;
+    display: flex;
 
     margin: 0;
     position: absolute;
     left: 50%;
-    top: 70%;
-    transform: translate(-50%, 0%);
+    top: 70vh;
+    transform: translate(-50%, 50%);
 }
 
 .lttr {
     margin: 0.1em;
     display: flex;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.8em;
+    height: 1.8em;
 
     font-size: 1.5vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
