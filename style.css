@@ -1,6 +1,7 @@
 .title {
     font-size: 4vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: default;
 
     margin: 0;
     position: absolute;
