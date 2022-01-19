@@ -51,7 +51,8 @@
     margin: 0;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 25%);
+    top: 25%;
+    transform: translate(-50%, -25%);
 }
 
 .row {
@@ -70,4 +71,29 @@
     justify-content: center;
     align-items: center;
     border: 0.1em solid black;
+}
+
+.letters {
+    display: inline-flex;
+
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, 0%);
+}
+
+.lttr {
+    margin: 0.1em;
+    display: flex;
+    width: 1.5em;
+    height: 1.5em;
+
+    font-size: 1.5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid black;
+    background-color: lightgray;
 }
