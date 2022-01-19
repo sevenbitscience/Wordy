@@ -9,7 +9,7 @@ I came up with some other challenge mode I will add.
 ### No Greens
 Even if a letter is in the correct position it will still show yellow
 
-### No Gray's
+### No Grays
 You can't use grayed out letters in your next guesses
 
 ### Number of attempts
