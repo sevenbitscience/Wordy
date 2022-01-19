@@ -2,6 +2,8 @@ var wrd = '';
 var rowNum = 0;
 var playing = true;
 
+var rows = 6;
+
 var letters = ['↵', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '⌫'];
 
 const wrds = ['adopt', 'rover', 'onion', 'fotos', 'media', 'empty', 'virus', 'elvis', 'flush', 'kathy', 'steps', 'drain', 'enjoy', 'vocal', 'japan', 'delta', 'crude', 'edgar', 
@@ -72,22 +74,33 @@ function testWord(word_in) {
         $(".game-container .row").eq(rowNum).css("background-color", "white");
         rowNum++;
         wrd = "";
-        if (rowNum < 6) {
+        if (rowNum < rows) {
             $(".game-container .row").eq(rowNum).css("background-color", "lightgray");
         }
     } else {
         errorShake();
     }
 
-    if (rowNum == 6) {
+    if (rowNum == rows) {
         playing = false;
         $(".game-container").after(lose_screen);
         return;
     }
 }
 
+function GenerateBoard(height) {
+    for (let r = 0; r < height; r++) {
+        $(".game-container").append("<div class=\"row\"></div>");
+        for (let r = 0; r < 5; r++) {
+            $(".game-container .row").last().append("<div class=\"square\"></div>");
+        }
+    }
+}
+
 $(document).ready(function () {
     console.log(wrds[correct_wrd]);
+    GenerateBoard(rows);
+
     $(".game-container .row").eq(rowNum).css("background-color", "lightgray");
 
     $(".game-container").after("<div class=\"letters\"><div>");
@@ -117,7 +130,7 @@ $(document).ready(function () {
         $(".lttr").click(function (e) { 
             e.preventDefault();
             let letter = $(this).text();
-            if (rowNum < 6) {
+            if (rowNum < rows) {
                 if (letter == "↵" && wrd.length == 5) {
                     testWord(wrd);
                     return;
