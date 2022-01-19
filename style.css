@@ -26,6 +26,24 @@
     transform: translate(-50%, -50%);
 }
 
+.lose {
+    font-size: 5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+
+    border: black 0.1em solid;
+    border-radius: 0.5em;
+    background-color: gray;
+    padding: 0.2em;
+    width: 4.5;
+
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
 .game-container {
     display: flex;
     flex-direction: column;
