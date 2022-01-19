@@ -62,7 +62,7 @@ function testWord(word_in) {
             i++;
         }
         if (word == wrds[correct_wrd]) {
-            $(".game-container").after("<div class=\"win\">You Win!</div>");
+            $(".game-container").after("<div class=\"win popup\">You Win!</div>");
             playing = false;
             return
         }
@@ -78,7 +78,7 @@ function testWord(word_in) {
 
     if (rowNum == 6) {
         playing = false;
-        $(".game-container").after("<div class=\"lose\">You lose!</div>");
+        $(".game-container").after("<div class=\"lose popup\">You lose!</div>");
         return
     }
 }
