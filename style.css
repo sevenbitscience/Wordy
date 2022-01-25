@@ -1,26 +1,24 @@
 .title {
+    position: static;
     font-size: 4vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: default;
-
+    text-align: center;
     margin: 0;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
 }
 
 .popup {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
     background-color: lightgray;
     padding: 0.2em;
     margin: 0;
     width: 40%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    position: absolute;
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
@@ -42,15 +40,13 @@
 }
 
 .game-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    position: relative;
+    width: min-content;
+    height: min-content;
     user-select: none;
-
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    top: 42vh;
-    transform: translate(-50%, -50%);
+    top: 2vh;
+    margin: auto;
 }
 
 .row {
@@ -73,27 +69,33 @@
 
 .letters {
     display: flex;
-
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    top: 70vh;
-    transform: translate(-50%, 50%);
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    top: 5vh;
 }
 
 .lttr {
-    margin: 0.1em;
-    display: flex;
     width: 1.8em;
     height: 1.8em;
     cursor: pointer;
     user-select: none;
-
-    font-size: 1.5vw;
+    margin: 0.2%;
+    line-height: 1.8em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-    justify-content: center;
-    align-items: center;
+    font-size: 1.5vw;
+    text-align: center;
     border: 0.1em solid black;
     background-color: lightgray;
+}
+
+@media (max-width: 800px) {
+    .lttr {
+        width: 2.8em;
+        height: 2.8em;
+        font-size: 3.4vw;
+        line-height: 2.8em;
+    }
 }
