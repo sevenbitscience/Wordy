@@ -143,11 +143,16 @@ $(document).ready(function () {
             e.preventDefault();
             let letter = $(this).text();
             if (rowNum < rows) {
-                if (letter == "↵" && wrd.length == 5) {
-                    testWord(wrd);
-                    return;
+                if (letter == "↵") {
+                    if (wrd.length == 5) {
+                        testWord(wrd);
+                        return;
+                    } else {
+                        errorShake();
+                        return;
+                    }
                 }
-                if (letter == "⌫" && wrd.length <= 5) {
+                if (letter == "⌫") {
                     wrd = wrd.slice(0, -1);
                     showWord(wrd);
                     return;
