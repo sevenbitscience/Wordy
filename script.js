@@ -45,11 +45,11 @@ function errorShake() {
 
 function testWord(word_in) {
     let word = word_in;
-    if (wrds.includes(word.toLowerCase())) {
+    if (wrds.includes(word)) {
         let activeRow = $(".game-container .row").eq(rowNum).find(".square");
         let activeLetter = $(activeRow).first();
         let word_chars = word.split("");
-        let ans_chars = wrds[correct_wrd].toUpperCase().split("");
+        let ans_chars = wrds[correct_wrd].split("");
         let i = 0;
         for (const letter of word_chars) {
             if (ans_chars.includes(letter)) {
