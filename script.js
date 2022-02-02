@@ -130,7 +130,7 @@ $(document).ready(function () {
                 showWord(wrd);
             }
             else if (e.which == 13) {
-                ansr = ansrs[Math.floor(Math.random() * ansrs.length)].toLowerCase();
+                ansr = ansrs[Math.floor(Math.random() * ansrs.length)].toUpperCase();
                 $(".row").remove();
                 $(".letters").remove();
                 $(".popup").remove();
@@ -141,32 +141,42 @@ $(document).ready(function () {
             }
         });
         
-    if (playing) {
         $(".lttr").click(function (e) { 
             e.preventDefault();
             let letter = $(this).text();
-            if (rowNum < rows) {
-                if (letter == "↵") {
-                    if (wrd.length == 5) {
-                        testWord(wrd);
-                        return;
-                    } else {
-                        errorShake();
+            if (playing) {
+                if (rowNum < rows) {
+                    if (letter == "↵") {
+                        if (wrd.length == 5) {
+                            testWord(wrd);
+                            return;
+                        } else {
+                            errorShake();
+                            return;
+                        }
+                    }
+                    if (letter == "⌫") {
+                        wrd = wrd.slice(0, -1);
+                        showWord(wrd);
                         return;
                     }
+                    if (wrd.length < 5) {
+                        wrd = wrd + letter;
+                        showWord(wrd);
+                    }
+                } else {
+                    errorShake();
                 }
-                if (letter == "⌫") {
-                    wrd = wrd.slice(0, -1);
-                    showWord(wrd);
-                    return;
-                }
-                if (wrd.length < 5) {
-                    wrd = wrd + letter.toUpperCase();
-                    showWord(wrd);
-                }
-            } else {
-                errorShake();
+            } else if (letter == "↵" && playing == false) {
+                ansr = ansrs[Math.floor(Math.random() * ansrs.length)].toUpperCase();
+                $(".row").remove();
+                $(".letters").remove();
+                $(".popup").remove();
+                wrd = '';
+                rowNum = 0;
+                playing = true;
+                GenerateBoard(rows);
+                return;
             }
         });
-    }
 });
