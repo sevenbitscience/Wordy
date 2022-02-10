@@ -1,7 +1,7 @@
 # wordy
 Yeah so it's another wordle clone. I thought it would be a fun challenge to try and make a wordle like game, and I came up with some other challenge modes I want to try.
 
-[7bitsci.com/wordy/](https://www.7bitsci.com/wordy/)
+Here is the link to play the game: [7bitsci.com/wordy/](https://www.7bitsci.com/wordy/)
 
 ## Extra Modes
 I came up with some other challenge mode I will add.
