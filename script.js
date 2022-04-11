@@ -130,14 +130,7 @@ $(document).ready(function () {
                 showWord(wrd);
             }
             else if (e.which == 13) {
-                ansr = ansrs[Math.floor(Math.random() * ansrs.length)].toUpperCase();
-                $(".row").remove();
-                $(".letters").remove();
-                $(".popup").remove();
-                wrd = '';
-                rowNum = 0;
-                playing = true;
-                GenerateBoard(rows);
+                location.reload();
             }
         });
         
@@ -168,15 +161,7 @@ $(document).ready(function () {
                     errorShake();
                 }
             } else if (letter == "↵" && playing == false) {
-                ansr = ansrs[Math.floor(Math.random() * ansrs.length)].toUpperCase();
-                $(".row").remove();
-                $(".letters").remove();
-                $(".popup").remove();
-                wrd = '';
-                rowNum = 0;
-                playing = true;
-                GenerateBoard(rows);
-                return;
+                location.reload();
             }
         });
 });
